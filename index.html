@@ -866,7 +866,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script type="module" src = "firebase.js">
+<script type="module">
 import { db } from "./firebase.js"; 
 import { doc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
@@ -940,5 +940,13 @@ function fmtTime(d) {
 }
 
 // 모바일 전용 토글 라우터 펑션
-function toggleSidebar() {
+function toggleSidebar() 
   const sidebar = document.que
+
+  // 자바스크립트 코드 맨 아래쪽에 이렇게 추가해 주세요.
+window.showPage = showPage;
+window.changeMonth = changeMonth;
+window.ask = ask;
+window.sendMsg = sendMsg;
+window.toggleSidebar = toggleSidebar;
+// HTML의 onclick에서 부르는 함수들을 모두 window에 등록해 줍니다.
