@@ -867,8 +867,8 @@
 <div class="toast" id="toast"></div>
 
 <script type="module">
-//import { db } from "./firebase.js"; 
-//import { doc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { db } from "./firebase.js"; 
+import { doc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // 글로벌 실시간 상태판 구조 정의
 let state = {
@@ -927,9 +927,9 @@ window.onload = () => {
     renderQna();
   });
 
-//  onSnapshot(doc(db, "schoolPortal", "meals"), (docSnap) => {
-  //  if (docSnap.exists()) {
-//      mealData = docSnap.data() || {};
+ onSnapshot(doc(db, "schoolPortal", "meals"), (docSnap) => {
+   if (docSnap.exists()) {
+      mealData = docSnap.data() || {};
     }
     renderCalendar();
   });
